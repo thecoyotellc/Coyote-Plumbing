@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coyote Plumbing LLC | Plumbing & Bathroom Remodels in Moore County, NC</title>
   <meta name="description" content="Coyote Plumbing LLC provides plumbing repairs, bathroom remodels, water heaters, fixture installs, drain work, and handyman services in Moore County and surrounding North Carolina areas." />
+ 
   <style>
     :root {
       --dark: #1f1f1f;
@@ -309,6 +310,60 @@
         padding-top: 48px;
       }
     }
+    .gallery{
+padding:80px 20px;
+background:#f8f8f8;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+gap:35px;
+max-width:1200px;
+margin:auto;
+}
+
+.project{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 18px rgba(0,0,0,.12);
+}
+
+.project h3{
+text-align:center;
+margin-bottom:20px;
+}
+
+.photo-pair{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.photo-box img{
+width:100%;
+border-radius:10px;
+display:block;
+}
+
+.photo-label{
+text-align:center;
+font-weight:bold;
+margin-top:8px;
+}
+
+@media(max-width:768px){
+
+.photo-pair{
+grid-template-columns:1fr;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+}
   </style>
 </head>
 <body>
@@ -323,6 +378,7 @@
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#about">About</a>
+        <a href="#gallery">Our Work</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -392,7 +448,95 @@
       </ul>
     </div>
   </section>
+  
+<section class="gallery" id="gallery">
 
+<div class="section-title">
+<h2>Our Recent Projects</h2>
+<p>See the quality craftsmanship that homeowners across Moore County trust Coyote Plumbing to deliver.</p>
+</div>
+
+<div class="gallery-grid">
+
+<div class="project">
+<h3>Custom Shower Transformation</h3>
+
+<div class="photo-pair">
+
+<div class="photo-box">
+<img src="1000025410.jpg">
+<div class="photo-label">Before</div>
+</div>
+
+<div class="photo-box">
+<img src="1000025411.jpg">
+<div class="photo-label">After</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="project">
+<h3>Tub to Walk-In Shower Conversion</h3>
+
+<div class="photo-pair">
+
+<div class="photo-box">
+<img src="1000025412.jpg">
+<div class="photo-label">Before</div>
+</div>
+
+<div class="photo-box">
+<img src="1000025413.jpg">
+<div class="photo-label">After</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="project">
+<h3>Complete Master Bathroom Remodel</h3>
+
+<div class="photo-pair">
+
+<div class="photo-box">
+<img src="1000025414.jpg">
+<div class="photo-label">Before</div>
+</div>
+
+<div class="photo-box">
+<img src="1000025419.png">
+<div class="photo-label">After</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="project">
+<h3>Luxury Walk-In Shower</h3>
+
+<div class="photo-pair">
+
+<div class="photo-box">
+<img src="1000025420.jpg">
+<div class="photo-label">Before</div>
+</div>
+
+<div class="photo-box">
+<img src="1000025421.jpg">
+<div class="photo-label">After</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</section>
+  
   <section class="contact" id="contact">
     <div class="section-title">
       <h2>Request a Free Quote</h2>
