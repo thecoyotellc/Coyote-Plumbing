@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Coyote Plumbing LLC | Plumbing & Bathroom Remodels in Moore County, NC</title>
-  <meta name="description" content="Coyote Plumbing LLC provides plumbing repairs, bathroom remodels, water heaters, fixture installs, drain work, and handyman services in Moore County and surrounding North Carolina areas." />
- 
+
+  <meta
+    name="description"
+    content="Coyote Plumbing LLC provides plumbing repairs, bathroom remodels, water heaters, fixture installs, drain work, and handyman services in Moore County and surrounding North Carolina areas."
+  />
+
   <style>
     :root {
       --dark: #1f1f1f;
@@ -24,6 +29,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
@@ -34,6 +43,10 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
     }
 
     .topbar {
@@ -52,7 +65,10 @@
     }
 
     header {
-      background: linear-gradient(rgba(31,31,31,.76), rgba(31,31,31,.76)), url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=80');
+      background:
+        linear-gradient(rgba(31,31,31,.76), rgba(31,31,31,.76)),
+        url("https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=80");
+
       background-size: cover;
       background-position: center;
       color: white;
@@ -70,7 +86,7 @@
     .logo {
       font-size: 1.55rem;
       font-weight: 800;
-      letter-spacing: .5px;
+      letter-spacing: 0.5px;
     }
 
     .logo span {
@@ -80,8 +96,12 @@
     .nav-links {
       display: flex;
       gap: 22px;
-      font-size: .95rem;
+      font-size: 0.95rem;
       flex-wrap: wrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--tan);
     }
 
     .hero {
@@ -120,7 +140,7 @@
       border-radius: 999px;
       font-weight: 700;
       display: inline-block;
-      transition: .2s ease;
+      transition: 0.2s ease;
     }
 
     .btn-primary {
@@ -227,6 +247,75 @@
       margin-right: 10px;
     }
 
+    /* PROJECT GALLERY */
+
+    .gallery {
+      background: #f8f8f8;
+    }
+
+    .gallery-grid {
+      display: grid;
+      gap: 35px;
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    .project {
+      background: white;
+      padding: 24px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.10);
+      border-top: 5px solid var(--gold);
+    }
+
+    .project h3 {
+      text-align: center;
+      color: var(--dark);
+      margin-bottom: 6px;
+      font-size: 1.55rem;
+    }
+
+    .project-description {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .photo-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .photo-column {
+      background: var(--light);
+      padding: 14px;
+      border-radius: 14px;
+    }
+
+    .photo-label {
+      text-align: center;
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .photo-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .photo-stack img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 10px;
+      background: #ddd;
+    }
+
     .contact {
       background: var(--dark);
       color: white;
@@ -267,7 +356,9 @@
       gap: 12px;
     }
 
-    input, textarea, select {
+    input,
+    textarea,
+    select {
       width: 100%;
       padding: 14px;
       border: none;
@@ -291,7 +382,7 @@
       color: #ccc;
       text-align: center;
       padding: 24px 7%;
-      font-size: .95rem;
+      font-size: 0.95rem;
     }
 
     @media (max-width: 780px) {
@@ -302,79 +393,53 @@
       }
 
       .about,
-      .contact-grid {
+      .contact-grid,
+      .photo-pair {
         grid-template-columns: 1fr;
       }
 
       header {
         padding-top: 48px;
       }
+
+      .gallery {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .project {
+        padding: 16px;
+      }
+
+      .photo-stack img {
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+      }
     }
-    .gallery{
-padding:80px 20px;
-background:#f8f8f8;
-}
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
-gap:35px;
-max-width:1200px;
-margin:auto;
-}
-
-.project{
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 5px 18px rgba(0,0,0,.12);
-}
-
-.project h3{
-text-align:center;
-margin-bottom:20px;
-}
-
-.photo-pair{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-}
-
-.photo-box img{
-width:100%;
-border-radius:10px;
-display:block;
-}
-
-.photo-label{
-text-align:center;
-font-weight:bold;
-margin-top:8px;
-}
-
-@media(max-width:768px){
-
-.photo-pair{
-grid-template-columns:1fr;
-}
-
-.gallery-grid{
-grid-template-columns:1fr;
-}
-
-}
   </style>
 </head>
+
 <body>
+
   <div class="topbar">
-    <div><strong>Serving:</strong> Moore County & surrounding NC areas</div>
-    <div><strong>Call/Text:</strong> <a href="tel:9109030387">910-903-0387</a></div>
+    <div>
+      <strong>Serving:</strong>
+      Moore County &amp; surrounding NC areas
+    </div>
+
+    <div>
+      <strong>Call/Text:</strong>
+      <a href="tel:9109030387">910-903-0387</a>
+    </div>
   </div>
 
   <header>
     <nav>
-      <div class="logo">Coyote <span>Plumbing</span> LLC</div>
+      <div class="logo">
+        Coyote <span>Plumbing</span> LLC
+      </div>
+
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#about">About</a>
@@ -384,12 +449,28 @@ grid-template-columns:1fr;
     </nav>
 
     <div class="hero">
-      <div class="hero-label">Plumbing • Bathroom Remodels • Repairs</div>
-      <h1>Reliable plumbing help when your home needs it most.</h1>
-      <p>Coyote Plumbing LLC helps homeowners with plumbing repairs, water heaters, fixture installs, drain issues, bathroom remodels, and practical home repair solutions.</p>
+      <div class="hero-label">
+        Plumbing • Bathroom Remodels • Repairs
+      </div>
+
+      <h1>
+        Reliable plumbing help when your home needs it most.
+      </h1>
+
+      <p>
+        Coyote Plumbing LLC helps homeowners with plumbing repairs,
+        water heaters, fixture installs, drain issues, bathroom
+        remodels, and practical home repair solutions.
+      </p>
+
       <div class="buttons">
-        <a class="btn btn-primary" href="#contact">Request a Free Quote</a>
-        <a class="btn btn-secondary" href="tel:9109030387">Call Now</a>
+        <a class="btn btn-primary" href="#contact">
+          Request a Free Quote
+        </a>
+
+        <a class="btn btn-secondary" href="tel:9109030387">
+          Call Now
+        </a>
       </div>
     </div>
   </header>
@@ -397,47 +478,93 @@ grid-template-columns:1fr;
   <section id="services">
     <div class="section-title">
       <h2>Services We Offer</h2>
-      <p>From small repairs to full bathroom transformations, we focus on clean work, honest communication, and practical solutions that fit your home.</p>
+
+      <p>
+        From small repairs to full bathroom transformations, we focus
+        on clean work, honest communication, and practical solutions
+        that fit your home.
+      </p>
     </div>
 
     <div class="cards">
+
       <div class="card">
         <h3>Plumbing Repairs</h3>
-        <p>Leaks, fixture issues, pipe repairs, shutoff valves, drain connections, and general plumbing troubleshooting.</p>
+        <p>
+          Leaks, fixture issues, pipe repairs, shutoff valves,
+          drain connections, and general plumbing troubleshooting.
+        </p>
       </div>
+
       <div class="card">
         <h3>Bathroom Remodels</h3>
-        <p>Walk-in showers, vanities, tile, plumbing relocation, subfloor repairs, drywall coordination, and full bathroom updates.</p>
+        <p>
+          Walk-in showers, vanities, tile, plumbing relocation,
+          subfloor repairs, drywall coordination, and full bathroom updates.
+        </p>
       </div>
+
       <div class="card">
         <h3>Water Heaters</h3>
-        <p>Tank water heater replacement, water heater connections, expansion tanks, mixing valves, and replacement guidance.</p>
+        <p>
+          Tank water heater replacement, water heater connections,
+          expansion tanks, mixing valves, and replacement guidance.
+        </p>
       </div>
+
       <div class="card">
         <h3>Fixture Installation</h3>
-        <p>Sinks, faucets, toilets, dishwashers, garbage disposals, shower valves, drains, and supply hookups.</p>
+        <p>
+          Sinks, faucets, toilets, dishwashers, garbage disposals,
+          shower valves, drains, and supply hookups.
+        </p>
       </div>
+
       <div class="card">
-        <h3>Drain & Utility Work</h3>
-        <p>Washer boxes, laundry hookups, drain tie-ins, AAV installations, cleanouts, and practical utility plumbing repairs.</p>
+        <h3>Drain &amp; Utility Work</h3>
+        <p>
+          Washer boxes, laundry hookups, drain tie-ins, AAV installations,
+          cleanouts, and practical utility plumbing repairs.
+        </p>
       </div>
+
       <div class="card">
         <h3>Handyman Help</h3>
-        <p>Home repair support for projects that need a skilled, practical contractor who understands plumbing and remodel work.</p>
+        <p>
+          Home repair support for projects that need a skilled,
+          practical contractor who understands plumbing and remodel work.
+        </p>
       </div>
+
     </div>
   </section>
 
   <section class="about" id="about">
+
     <div>
-      <h2>Local, practical, and built around real homeowners.</h2>
-      <p>Coyote Plumbing LLC is a local plumbing and remodel company serving Moore County and surrounding North Carolina communities.</p>
-      <p>We help homeowners solve the kind of problems that need more than a quick patch — from leaking plumbing and outdated fixtures to bathrooms that need a complete reset.</p>
-      <a class="btn btn-primary" href="#contact">Tell Us About Your Project</a>
+      <h2>
+        Local, practical, and built around real homeowners.
+      </h2>
+
+      <p>
+        Coyote Plumbing LLC is a local plumbing and remodel company
+        serving Moore County and surrounding North Carolina communities.
+      </p>
+
+      <p>
+        We help homeowners solve the kind of problems that need more
+        than a quick patch—from leaking plumbing and outdated fixtures
+        to bathrooms that need a complete reset.
+      </p>
+
+      <a class="btn btn-primary" href="#contact">
+        Tell Us About Your Project
+      </a>
     </div>
 
     <div class="about-box">
       <h3>Why Homeowners Call Coyote Plumbing</h3>
+
       <ul class="checklist">
         <li>Clear communication before work begins</li>
         <li>Same-day appointments depending on location</li>
@@ -447,136 +574,306 @@ grid-template-columns:1fr;
         <li>Free quote requests available</li>
       </ul>
     </div>
+
   </section>
-  
-<section class="gallery" id="gallery">
 
-<div class="section-title">
-<h2>Our Recent Projects</h2>
-<p>See the quality craftsmanship that homeowners across Moore County trust Coyote Plumbing to deliver.</p>
-</div>
+  <section class="gallery" id="gallery">
 
-<div class="gallery-grid">
+    <div class="section-title">
+      <h2>Our Recent Projects</h2>
 
-<div class="project">
-<h3>Custom Shower Transformation</h3>
+      <p>
+        Take a look at some of the bathroom transformations completed
+        for homeowners in Moore County and surrounding areas.
+      </p>
+    </div>
 
-<div class="photo-pair">
+    <div class="gallery-grid">
 
-<div class="photo-box">
-<img src="1000025410.jpg">
-<div class="photo-label">Before</div>
-</div>
+      <!-- BATHROOM 1 -->
 
-<div class="photo-box">
-<img src="1000025411.jpg">
-<div class="photo-label">After</div>
-</div>
+      <article class="project">
+        <h3>Complete Bathroom Transformation</h3>
 
-</div>
-</div>
+        <p class="project-description">
+          A complete bathroom renovation featuring a custom tiled shower,
+          updated vanity area, new finishes, and a refreshed layout.
+        </p>
 
+        <div class="photo-pair">
 
-<div class="project">
-<h3>Tub to Walk-In Shower Conversion</h3>
+          <div class="photo-column">
+            <div class="photo-label">Before</div>
 
-<div class="photo-pair">
+            <div class="photo-stack">
+              <img
+                src="tf1773614799246.jpg"
+                alt="Bathroom 1 before renovation"
+                loading="lazy"
+              />
 
-<div class="photo-box">
-<img src="1000025412.jpg">
-<div class="photo-label">Before</div>
-</div>
+              <img
+                src="tf1773614793539.jpg"
+                alt="Bathroom 1 vanity area before renovation"
+                loading="lazy"
+              />
 
-<div class="photo-box">
-<img src="1000025413.jpg">
-<div class="photo-label">After</div>
-</div>
+              <img
+                src="tf1773614782536.jpg"
+                alt="Bathroom 1 shower before renovation"
+                loading="lazy"
+              />
+            </div>
+          </div>
 
-</div>
-</div>
+          <div class="photo-column">
+            <div class="photo-label">After</div>
 
+            <div class="photo-stack">
+              <img
+                src="bathroom%202.png"
+                alt="Bathroom 1 completed renovation"
+                loading="lazy"
+              />
 
-<div class="project">
-<h3>Complete Master Bathroom Remodel</h3>
+              <img
+                src="20260424_155557.jpg"
+                alt="Bathroom 1 custom tiled shower after renovation"
+                loading="lazy"
+              />
 
-<div class="photo-pair">
+              <img
+                src="20260424_155549.jpg"
+                alt="Bathroom 1 completed shower after renovation"
+                loading="lazy"
+              />
+            </div>
+          </div>
 
-<div class="photo-box">
-<img src="1000025414.jpg">
-<div class="photo-label">Before</div>
-</div>
+        </div>
+      </article>
 
-<div class="photo-box">
-<img src="1000025419.png">
-<div class="photo-label">After</div>
-</div>
+      <!-- BATHROOM 2 -->
 
-</div>
-</div>
+      <article class="project">
+        <h3>Tub-to-Shower Bathroom Remodel</h3>
 
+        <p class="project-description">
+          An outdated tub enclosure was transformed into a modern
+          walk-in shower with updated tile, glass, fixtures, flooring,
+          paint, and vanity finishes.
+        </p>
 
-<div class="project">
-<h3>Luxury Walk-In Shower</h3>
+        <div class="photo-pair">
 
-<div class="photo-pair">
+          <div class="photo-column">
+            <div class="photo-label">Before</div>
 
-<div class="photo-box">
-<img src="1000025420.jpg">
-<div class="photo-label">Before</div>
-</div>
+            <div class="photo-stack">
+              <img
+                src="20250914_150633.jpg"
+                alt="Bathroom 2 before tub-to-shower conversion"
+                loading="lazy"
+              />
+            </div>
+          </div>
 
-<div class="photo-box">
-<img src="1000025421.jpg">
-<div class="photo-label">After</div>
-</div>
+          <div class="photo-column">
+            <div class="photo-label">After</div>
 
-</div>
-</div>
+            <div class="photo-stack">
+              <img
+                src="tf1760208675772.jpg"
+                alt="Bathroom 2 after tub-to-shower conversion"
+                loading="lazy"
+              />
+            </div>
+          </div>
 
-</div>
+        </div>
+      </article>
 
-</section>
-  
+      <!-- BATHROOM 3 -->
+
+      <article class="project">
+        <h3>Custom Master Bathroom Remodel</h3>
+
+        <p class="project-description">
+          A complete master bathroom transformation featuring a custom
+          walk-in shower, frameless glass, marble-look tile, updated vanity,
+          new flooring, and modern fixtures.
+        </p>
+
+        <div class="photo-pair">
+
+          <div class="photo-column">
+            <div class="photo-label">Before</div>
+
+            <div class="photo-stack">
+              <img
+                src="tf1767190108257.jpg"
+                alt="Bathroom 3 before complete renovation"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div class="photo-column">
+            <div class="photo-label">After</div>
+
+            <div class="photo-stack">
+              <img
+                src="20260313_092006.jpg"
+                alt="Bathroom 3 after complete master bathroom renovation"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- BATHROOM 4 -->
+
+      <article class="project">
+        <h3>Luxury Stone Walk-In Shower</h3>
+
+        <p class="project-description">
+          A fiberglass shower enclosure was replaced with a custom tiled
+          walk-in shower featuring stacked-stone accents, pebble flooring,
+          black fixtures, rainfall showerhead, and glass doors.
+        </p>
+
+        <div class="photo-pair">
+
+          <div class="photo-column">
+            <div class="photo-label">Before</div>
+
+            <div class="photo-stack">
+              <img
+                src="20260521_085630.jpg"
+                alt="Bathroom 4 fiberglass shower before renovation"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div class="photo-column">
+            <div class="photo-label">After</div>
+
+            <div class="photo-stack">
+              <img
+                src="20260708_144051.jpg"
+                alt="Bathroom 4 luxury stone walk-in shower after renovation"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </section>
+
   <section class="contact" id="contact">
+
     <div class="section-title">
       <h2>Request a Free Quote</h2>
-      <p>Send a few details about your plumbing issue or remodel project and we’ll get back with you as soon as possible.</p>
+
+      <p>
+        Send a few details about your plumbing issue or remodel project,
+        and we’ll get back with you as soon as possible.
+      </p>
     </div>
 
     <div class="contact-grid">
+
       <div class="contact-card">
         <h3>Contact Information</h3>
-        <p><strong>Company:</strong> Coyote Plumbing LLC</p>
-        <p><strong>Phone:</strong> <a href="tel:9109030387">910-903-0387</a></p>
-        <p><strong>Email:</strong> <a href="mailto:thecoyotellc@gmail.com">thecoyotellc@gmail.com</a></p>
-        <p><strong>Service Area:</strong> Moore County, NC and surrounding areas</p>
-        <p><strong>Facebook:</strong> Add your Facebook business page link here</p>
+
+        <p>
+          <strong>Company:</strong>
+          Coyote Plumbing LLC
+        </p>
+
+        <p>
+          <strong>Phone:</strong>
+          <a href="tel:9109030387">910-903-0387</a>
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:thecoyotellc@gmail.com">
+            thecoyotellc@gmail.com
+          </a>
+        </p>
+
+        <p>
+          <strong>Service Area:</strong>
+          Moore County, NC and surrounding areas
+        </p>
       </div>
 
       <div class="contact-card">
         <h3>Quote Request</h3>
-        <form class="quote-form" action="mailto:thecoyotellc@gmail.com" method="post" enctype="text/plain">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="tel" name="phone" placeholder="Phone Number" required />
-          <input type="email" name="email" placeholder="Email Address" />
+
+        <form
+          class="quote-form"
+          action="mailto:thecoyotellc@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            required
+          />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+          />
+
           <select name="service">
             <option value="">What do you need help with?</option>
             <option>Plumbing Repair</option>
             <option>Bathroom Remodel</option>
             <option>Water Heater</option>
-            <option>Fixture Install</option>
-            <option>Drain / Utility Work</option>
+            <option>Fixture Installation</option>
+            <option>Drain or Utility Work</option>
             <option>Other</option>
           </select>
-          <textarea name="message" placeholder="Briefly describe the issue or project"></textarea>
-          <button class="btn btn-primary" type="submit">Send Request</button>
+
+          <textarea
+            name="message"
+            placeholder="Briefly describe the issue or project"
+          ></textarea>
+
+          <button class="btn btn-primary" type="submit">
+            Send Request
+          </button>
+
         </form>
       </div>
+
     </div>
   </section>
 
   <footer>
-    © 2026 Coyote Plumbing LLC. Plumbing, repairs, and bathroom remodel services in Moore County, NC.
+    © 2026 Coyote Plumbing LLC. Plumbing, repairs, and bathroom remodel
+    services in Moore County, North Carolina.
   </footer>
+
 </body>
 </html>
