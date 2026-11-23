@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <title>Coyote Plumbing LLC | Plumbing & Bathroom Remodels in Moore County, NC</title>
+  <title>Coyote Plumbing LLC | Plumbing &amp; Bathroom Remodels in Moore County, NC</title>
 
   <meta
     name="description"
     content="Coyote Plumbing LLC provides plumbing repairs, bathroom remodels, water heaters, fixture installs, drain work, and handyman services in Moore County and surrounding North Carolina areas."
   />
+  <meta name="theme-color" content="#1f1f1f" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
 
   <style>
     :root {
@@ -21,6 +24,7 @@
       --text: #333;
       --muted: #666;
       --green: #3f5f46;
+      color-scheme: light;
     }
 
     * {
@@ -47,15 +51,50 @@
 
     img {
       max-width: 100%;
+      height: auto;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      z-index: 100;
+      background: var(--tan);
+      color: var(--dark);
+      font-weight: 800;
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .topbar {
       background: var(--dark);
       color: white;
-      padding: 12px 7%;
+      padding: 8px 7%;
       display: flex;
       justify-content: space-between;
-      gap: 16px;
+      align-items: center;
+      gap: 12px 20px;
       flex-wrap: wrap;
       font-size: 0.95rem;
     }
@@ -64,15 +103,41 @@
       color: var(--tan);
     }
 
-    header {
-      background:
-        linear-gradient(rgba(31,31,31,.76), rgba(31,31,31,.76)),
-        url("https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=80");
+    .topbar-call {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 6px 2px;
+      font-weight: 700;
+    }
 
-      background-size: cover;
-      background-position: center;
+    header {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: var(--dark);
       color: white;
       padding: 72px 7%;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: rgba(31, 31, 31, 0.76);
+      pointer-events: none;
     }
 
     nav {
@@ -87,6 +152,7 @@
       font-size: 1.55rem;
       font-weight: 800;
       letter-spacing: 0.5px;
+      line-height: 1.15;
     }
 
     .logo span {
@@ -95,9 +161,16 @@
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 6px 22px;
       font-size: 0.95rem;
       flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 8px 2px;
     }
 
     .nav-links a:hover {
@@ -139,7 +212,12 @@
       padding: 14px 22px;
       border-radius: 999px;
       font-weight: 700;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      line-height: 1.2;
+      text-align: center;
       transition: 0.2s ease;
     }
 
@@ -180,7 +258,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
       gap: 22px;
     }
 
@@ -188,7 +266,7 @@
       background: white;
       padding: 28px;
       border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       border-top: 5px solid var(--gold);
     }
 
@@ -227,7 +305,7 @@
       background: white;
       padding: 32px;
       border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
 
     .checklist {
@@ -247,7 +325,7 @@
       margin-right: 10px;
     }
 
-    /* PROJECT GALLERY */
+    /* Project photos: add another <article class="project"> and drop images in .photo-stack. */
 
     .gallery {
       background: #f8f8f8;
@@ -264,7 +342,7 @@
       background: white;
       padding: 24px;
       border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.10);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
       border-top: 5px solid var(--gold);
     }
 
@@ -291,6 +369,7 @@
       background: var(--light);
       padding: 14px;
       border-radius: 14px;
+      min-width: 0;
     }
 
     .photo-label {
@@ -335,10 +414,11 @@
     }
 
     .contact-card {
-      background: rgba(255,255,255,.08);
+      background: rgba(255, 255, 255, 0.08);
       padding: 30px;
       border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.15);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      min-width: 0;
     }
 
     .contact-card h3 {
@@ -351,9 +431,31 @@
       color: #efefef;
     }
 
+    .contact-card a {
+      color: var(--tan);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card a[href^="tel:"],
+    .contact-card a[href^="mailto:"] {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+
     .quote-form {
       display: grid;
       gap: 12px;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+      font-family: inherit;
     }
 
     input,
@@ -364,6 +466,10 @@
       border: none;
       border-radius: 10px;
       font-size: 1rem;
+      line-height: 1.4;
+      min-height: 48px;
+      color: var(--text);
+      background: #fff;
     }
 
     textarea {
@@ -377,6 +483,10 @@
       font-size: 1rem;
     }
 
+    .quote-form button {
+      width: 100%;
+    }
+
     footer {
       background: #141414;
       color: #ccc;
@@ -385,11 +495,27 @@
       font-size: 0.95rem;
     }
 
+    .call-bar {
+      display: none;
+    }
+
     @media (max-width: 780px) {
+      .topbar,
+      footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
       nav {
         align-items: flex-start;
         flex-direction: column;
-        margin-bottom: 50px;
+        gap: 8px;
+        margin-bottom: 22px;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 0 16px;
       }
 
       .about,
@@ -399,12 +525,37 @@
       }
 
       header {
-        padding-top: 48px;
+        padding: 28px 20px 32px;
       }
 
-      .gallery {
-        padding-left: 18px;
-        padding-right: 18px;
+      .hero h1 {
+        margin-bottom: 12px;
+      }
+
+      .hero p {
+        margin-bottom: 18px;
+      }
+
+      .buttons {
+        flex-wrap: nowrap;
+      }
+
+      .buttons .btn {
+        padding: 12px 14px;
+        font-size: 0.92rem;
+        white-space: nowrap;
+      }
+
+      .buttons .btn-primary {
+        flex: 1 1 auto;
+      }
+
+      .buttons .btn-secondary {
+        flex: 0 0 auto;
+      }
+
+      section {
+        padding: 48px 20px;
       }
 
       .project {
@@ -416,26 +567,118 @@
         max-height: none;
         object-fit: contain;
       }
+
+      .hero p {
+        font-size: 1.05rem;
+      }
+
+      .call-bar {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 40;
+        padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+        background: rgba(20, 20, 20, 0.96);
+        border-top: 3px solid var(--tan);
+      }
+
+      .call-bar a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        border-radius: 999px;
+        background: var(--tan);
+        color: #1f1f1f;
+        font-weight: 800;
+        font-size: 1.05rem;
+      }
+
+      body {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom));
+      }
+
+      body:has(.quote-form:focus-within) .call-bar {
+        display: none;
+      }
+
+      body:has(.quote-form:focus-within) {
+        padding-bottom: 0;
+      }
+    }
+
+    @media (max-width: 780px) and (max-height: 780px) {
+      header {
+        padding: 18px 20px 22px;
+      }
+
+      nav {
+        margin-bottom: 12px;
+      }
+
+      .hero-label {
+        margin-bottom: 6px;
+        letter-spacing: 0.5px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        margin-bottom: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn {
+        transition: none;
+      }
+
+      .btn:hover {
+        transform: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <a class="skip-link" href="#services">Skip to content</a>
+
   <div class="topbar">
-    <div>
+    <p>
       <strong>Serving:</strong>
       Moore County &amp; surrounding NC areas
-    </div>
+    </p>
 
-    <div>
-      <strong>Call/Text:</strong>
-      <a href="tel:9109030387">910-903-0387</a>
-    </div>
+    <a class="topbar-call" href="tel:+19109030387">
+      <strong>Call/Text:</strong>&nbsp;910-903-0387
+    </a>
   </div>
 
   <header>
-    <nav>
+    <img
+      class="hero-media"
+      src="images/hero-800.webp"
+      srcset="images/hero-640.webp 640w, images/hero-800.webp 800w, images/hero-1280.webp 1280w"
+      sizes="100vw"
+      width="800"
+      height="1200"
+      alt=""
+      fetchpriority="high"
+      decoding="async"
+    />
+
+    <nav aria-label="Primary">
       <div class="logo">
         Coyote <span>Plumbing</span> LLC
       </div>
@@ -468,13 +711,14 @@
           Request a Free Quote
         </a>
 
-        <a class="btn btn-secondary" href="tel:9109030387">
+        <a class="btn btn-secondary" href="tel:+19109030387">
           Call Now
         </a>
       </div>
     </div>
   </header>
 
+  <main>
   <section id="services">
     <div class="section-title">
       <h2>Services We Offer</h2>
@@ -590,8 +834,6 @@
 
     <div class="gallery-grid">
 
-      <!-- BATHROOM 1 -->
-
       <article class="project">
         <h3>Complete Bathroom Transformation</h3>
 
@@ -607,21 +849,36 @@
 
             <div class="photo-stack">
               <img
-                src="tf1773614799246.jpg"
+                src="images/bath-1-before-1.webp"
+                srcset="images/bath-1-before-1-640.webp 640w, images/bath-1-before-1.webp 960w"
+                sizes="(max-width: 780px) calc(100vw - 100px), 540px"
+                width="960"
+                height="1280"
                 alt="Bathroom 1 before renovation"
                 loading="lazy"
+                decoding="async"
               />
 
               <img
-                src="tf1773614793539.jpg"
+                src="images/bath-1-before-2.webp"
+                srcset="images/bath-1-before-2-640.webp 640w, images/bath-1-before-2.webp 960w"
+                sizes="(max-width: 780px) calc(100vw - 100px), 540px"
+                width="960"
+                height="1280"
                 alt="Bathroom 1 vanity area before renovation"
                 loading="lazy"
+                decoding="async"
               />
 
               <img
-                src="tf1773614782536.jpg"
+                src="images/bath-1-before-3.webp"
+                srcset="images/bath-1-before-3-640.webp 640w, images/bath-1-before-3.webp 960w"
+                sizes="(max-width: 780px) calc(100vw - 100px), 540px"
+                width="960"
+                height="1280"
                 alt="Bathroom 1 shower before renovation"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -630,27 +887,43 @@
             <div class="photo-label">After</div>
 
             <div class="photo-stack">
-              <img src="file_00000000a00871f88a26ba45c52cb345.png"
+              <img
+                src="images/bath-1-after-1.webp"
+                srcset="images/bath-1-after-1-640.webp 640w, images/bath-1-after-1.webp 960w"
+                sizes="(max-width: 780px) calc(100vw - 100px), 540px"
+                width="960"
+                height="1171"
+                alt="Bathroom 1 vanity, mirror, and toilet after renovation"
+                loading="lazy"
+                decoding="async"
               />
 
               <img
-                src="20260424_155557.jpg"
+                src="images/bath-1-after-2.webp"
+                srcset="images/bath-1-after-2-640.webp 640w, images/bath-1-after-2.webp 960w"
+                sizes="(max-width: 780px) calc(100vw - 100px), 540px"
+                width="960"
+                height="1280"
                 alt="Bathroom 1 custom tiled shower after renovation"
                 loading="lazy"
+                decoding="async"
               />
 
               <img
-                src="20260424_155549.jpg"
+                src="images/bath-1-after-3.webp"
+                srcset="images/bath-1-after-3-640.webp 640w, images/bath-1-after-3.webp 960w"
+                sizes="(max-width: 780px) calc(100vw - 100px), 540px"
+                width="960"
+                height="1280"
                 alt="Bathroom 1 completed shower after renovation"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
 
         </div>
       </article>
-
-      <!-- BATHROOM 2 -->
 
       <article class="project">
         <h3>Shower Remodel</h3>
@@ -667,9 +940,14 @@
 
             <div class="photo-stack">
               <img
-                src="20250914_150633.jpg"
+                src="images/bath-2-before.webp"
+                srcset="images/bath-2-before-640.webp 640w, images/bath-2-before.webp 960w"
+                sizes="(max-width: 780px) calc(100vw - 100px), 540px"
+                width="960"
+                height="1280"
                 alt="Bathroom 2 before shower conversion"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -679,17 +957,20 @@
 
             <div class="photo-stack">
               <img
-                src="tf1760208675772.jpg"
+                src="images/bath-2-after.webp"
+                srcset="images/bath-2-after-640.webp 640w, images/bath-2-after.webp 960w"
+                sizes="(max-width: 780px) calc(100vw - 100px), 540px"
+                width="960"
+                height="1280"
                 alt="Bathroom 2 after shower conversion"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
 
         </div>
       </article>
-
-      <!-- BATHROOM 3 -->
 
       <article class="project">
         <h3>Custom Master Bathroom Remodel</h3>
@@ -707,9 +988,12 @@
 
             <div class="photo-stack">
               <img
-                src="tf1767190108257.jpg"
+                src="images/bath-3-before.webp"
+                width="480"
+                height="640"
                 alt="Bathroom 3 before complete renovation"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -719,17 +1003,20 @@
 
             <div class="photo-stack">
               <img
-                src="20260313_092006.jpg"
+                src="images/bath-3-after.webp"
+                srcset="images/bath-3-after-640.webp 640w, images/bath-3-after.webp 960w"
+                sizes="(max-width: 780px) calc(100vw - 100px), 540px"
+                width="960"
+                height="1280"
                 alt="Bathroom 3 after complete master bathroom renovation"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
 
         </div>
       </article>
-
-      <!-- BATHROOM 4 -->
 
       <article class="project">
         <h3>Luxury Stone Walk-In Shower</h3>
@@ -747,9 +1034,14 @@
 
             <div class="photo-stack">
               <img
-                src="20260521_085630.jpg"
+                src="images/bath-4-before.webp"
+                srcset="images/bath-4-before-640.webp 640w, images/bath-4-before.webp 960w"
+                sizes="(max-width: 780px) calc(100vw - 100px), 540px"
+                width="960"
+                height="1600"
                 alt="Bathroom 4 fiberglass shower before renovation"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -759,12 +1051,24 @@
 
             <div class="photo-stack">
               <img
-                src="20260708_144051.jpg"
+                src="images/bath-4-after.webp"
+                srcset="images/bath-4-after-640.webp 640w, images/bath-4-after.webp 960w"
+                sizes="(max-width: 780px) calc(100vw - 100px), 540px"
+                width="960"
+                height="1280"
                 alt="Bathroom 4 luxury stone walk-in shower after renovation"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
+
+        </div>
+      </article>
+
+    </div>
+  </section>
+
   <section class="contact" id="contact">
 
     <div class="section-title">
@@ -788,7 +1092,7 @@
 
         <p>
           <strong>Phone:</strong>
-          <a href="tel:9109030387">910-903-0387</a>
+          <a href="tel:+19109030387">910-903-0387</a>
         </p>
 
         <p>
@@ -814,27 +1118,37 @@
           enctype="text/plain"
         >
 
+          <label class="visually-hidden" for="quote-name">Your Name</label>
           <input
+            id="quote-name"
             type="text"
             name="name"
+            autocomplete="name"
             placeholder="Your Name"
             required
           />
 
+          <label class="visually-hidden" for="quote-phone">Phone Number</label>
           <input
+            id="quote-phone"
             type="tel"
             name="phone"
+            autocomplete="tel"
             placeholder="Phone Number"
             required
           />
 
+          <label class="visually-hidden" for="quote-email">Email Address</label>
           <input
+            id="quote-email"
             type="email"
             name="email"
+            autocomplete="email"
             placeholder="Email Address"
           />
 
-          <select name="service">
+          <label class="visually-hidden" for="quote-service">What do you need help with?</label>
+          <select id="quote-service" name="service">
             <option value="">What do you need help with?</option>
             <option>Plumbing Repair</option>
             <option>Bathroom Remodel</option>
@@ -844,7 +1158,9 @@
             <option>Other</option>
           </select>
 
+          <label class="visually-hidden" for="quote-message">Briefly describe the issue or project</label>
           <textarea
+            id="quote-message"
             name="message"
             placeholder="Briefly describe the issue or project"
           ></textarea>
@@ -858,11 +1174,16 @@
 
     </div>
   </section>
+  </main>
 
   <footer>
     © 2026 Coyote Plumbing LLC. Plumbing, repairs, and bathroom remodel
     services in Moore County, North Carolina.
   </footer>
+
+  <div class="call-bar">
+    <a href="tel:+19109030387">Call or text 910-903-0387</a>
+  </div>
 
 </body>
 </html>
