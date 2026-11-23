@@ -1,0 +1,164 @@
+[
+  {
+    "file": "vass-before-1.jpg",
+    "town": "vass",
+    "before_after": "before",
+    "caption": "Pink tile accessible bathroom before the remodel in Vass, NC."
+  },
+  {
+    "file": "vass-before-2.jpg",
+    "town": "vass",
+    "before_after": "before",
+    "caption": "Moon-and-star wallpaper and a sliding fiberglass shower door, Vass, NC."
+  },
+  {
+    "file": "vass-before-3.jpg",
+    "town": "vass",
+    "before_after": "before",
+    "caption": "Dated wallpaper, hex-tile floor, and a worn double vanity in the Vass hall bath."
+  },
+  {
+    "file": "vass-before-4.jpg",
+    "town": "vass",
+    "before_after": "before",
+    "caption": "Striped wallpaper, duck border, and an old built-in tub/shower in Vass, NC."
+  },
+  {
+    "file": "vass-after-1.jpg",
+    "town": "vass",
+    "before_after": "after",
+    "caption": "Walk-in shower with marble-look tile, gold hardware, lit niche, and herringbone floor."
+  },
+  {
+    "file": "vass-after-2.jpg",
+    "town": "vass",
+    "before_after": "after",
+    "caption": "Light-wood double vanity, gold fixtures, and marble-look tile in the Vass master bath."
+  },
+  {
+    "file": "vass-after-3.jpg",
+    "town": "vass",
+    "before_after": "after",
+    "caption": "Herringbone mosaic shower floor with a brass drain in the Vass walk-in shower."
+  },
+  {
+    "file": "vass-after-4.jpg",
+    "town": "vass",
+    "before_after": "after",
+    "caption": "Tiled tub/shower, grey vanity, and gold fixtures in a Vass hall bath."
+  },
+  {
+    "file": "vass-after-5.jpg",
+    "town": "vass",
+    "before_after": "after",
+    "caption": "White double vanity, gold fixtures, and marble-look floor in a Vass bathroom."
+  },
+  {
+    "file": "carthage-before-1.jpg",
+    "town": "carthage",
+    "before_after": "before",
+    "caption": "Worn grey square floor tile and a marked threshold in a Carthage, NC bathroom."
+  },
+  {
+    "file": "carthage-before-2.jpg",
+    "town": "carthage",
+    "before_after": "before",
+    "caption": "Old grey bathroom floor tile looking toward the doorway in Carthage, NC."
+  },
+  {
+    "file": "carthage-after-1.jpg",
+    "town": "carthage",
+    "before_after": "after",
+    "caption": "New marble-look floor tile and threshold at the bathroom doorway in Carthage, NC."
+  },
+  {
+    "file": "carthage-after-2.jpg",
+    "town": "carthage",
+    "before_after": "after",
+    "caption": "Large-format marble-look bathroom floor tile after the redo in Carthage, NC."
+  },
+  {
+    "file": "aberdeen-before-1.jpg",
+    "town": "aberdeen",
+    "before_after": "before",
+    "caption": "Black vanity, shiplap, and floral wallpaper before the Aberdeen, NC remodel."
+  },
+  {
+    "file": "aberdeen-before-2.jpg",
+    "town": "aberdeen",
+    "before_after": "before",
+    "caption": "Separate water closet and wallpapered opening before a wall was removed in Aberdeen."
+  },
+  {
+    "file": "aberdeen-before-3.jpg",
+    "town": "aberdeen",
+    "before_after": "before",
+    "caption": "Old fiberglass shower stall before the Aberdeen bathroom remodel."
+  },
+  {
+    "file": "aberdeen-after-1.jpg",
+    "town": "aberdeen",
+    "before_after": "after",
+    "caption": "White double vanity, backlit mirror, and open plan after the wall was removed in Aberdeen."
+  },
+  {
+    "file": "aberdeen-after-2.jpg",
+    "town": "aberdeen",
+    "before_after": "after",
+    "caption": "Walk-in tiled shower beside an exposed brick column, Aberdeen, NC."
+  },
+  {
+    "file": "aberdeen-after-3.jpg",
+    "town": "aberdeen",
+    "before_after": "after",
+    "caption": "Marble shower curb, glass door, and mosaic floor detail in Aberdeen, NC."
+  },
+  {
+    "file": "raleigh-before-1.jpg",
+    "town": "raleigh",
+    "before_after": "before",
+    "caption": "Builder-grade vanity and fiberglass tub/shower before the Raleigh, NC remodel."
+  },
+  {
+    "file": "raleigh-before-2.jpg",
+    "town": "raleigh",
+    "before_after": "before",
+    "caption": "Fiberglass tub/shower stall before the full bathroom redo in Raleigh, NC."
+  },
+  {
+    "file": "raleigh-after-1.jpg",
+    "town": "raleigh",
+    "before_after": "after",
+    "caption": "Navy vanity, blue walls, and a walk-in tiled shower after the Raleigh remodel."
+  },
+  {
+    "file": "raleigh-after-2.jpg",
+    "town": "raleigh",
+    "before_after": "after",
+    "caption": "Walk-in marble-look shower with mosaic niche, bench, and black fixtures in Raleigh."
+  },
+  {
+    "file": "raleigh-after-3.jpg",
+    "town": "raleigh",
+    "before_after": "after",
+    "caption": "Navy vanity and walk-in shower from the opposite corner, Raleigh, NC."
+  },
+  {
+    "file": "pinebluff-before-1.jpg",
+    "town": "pinebluff",
+    "before_after": "before",
+    "caption": "White fiberglass shower stall before the spa remodel in Pinebluff, NC."
+  },
+  {
+    "file": "pinebluff-after-1.jpg",
+    "town": "pinebluff",
+    "before_after": "after",
+    "caption": "Stacked-stone slate shower with rain head, glass door, and pebble floor in Pinebluff."
+  },
+  {
+    "file": "pinebluff-after-2.jpg",
+    "town": "pinebluff",
+    "before_after": "after",
+    "caption": "Head-on view of the dark stone spa shower, rain head, and pebble floor in Pinebluff."
+  }
+]
