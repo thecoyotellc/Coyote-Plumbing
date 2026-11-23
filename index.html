@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <title>Coyote Plumbing LLC | Plumbing & Bathroom Remodels in Moore County, NC</title>
+  <title>Coyote Plumbing LLC | Plumbing &amp; Bathroom Remodels in Moore County, NC</title>
 
   <meta
     name="description"
     content="Coyote Plumbing LLC provides plumbing repairs, bathroom remodels, water heaters, fixture installs, drain work, and handyman services in Moore County and surrounding North Carolina areas."
   />
+  <meta name="theme-color" content="#1f1f1f" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
 
   <style>
     :root {
@@ -21,6 +24,7 @@
       --text: #333;
       --muted: #666;
       --green: #3f5f46;
+      color-scheme: light;
     }
 
     * {
@@ -47,15 +51,50 @@
 
     img {
       max-width: 100%;
+      height: auto;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -48px;
+      z-index: 100;
+      background: var(--tan);
+      color: var(--dark);
+      font-weight: 800;
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .topbar {
       background: var(--dark);
       color: white;
-      padding: 12px 7%;
+      padding: 8px 7%;
       display: flex;
       justify-content: space-between;
-      gap: 16px;
+      align-items: center;
+      gap: 12px 20px;
       flex-wrap: wrap;
       font-size: 0.95rem;
     }
@@ -64,15 +103,41 @@
       color: var(--tan);
     }
 
-    header {
-      background:
-        linear-gradient(rgba(31,31,31,.76), rgba(31,31,31,.76)),
-        url("https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=80");
+    .topbar-call {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 6px 2px;
+      font-weight: 700;
+    }
 
-      background-size: cover;
-      background-position: center;
+    header {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: var(--dark);
       color: white;
       padding: 72px 7%;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: rgba(31, 31, 31, 0.76);
+      pointer-events: none;
     }
 
     nav {
@@ -87,6 +152,7 @@
       font-size: 1.55rem;
       font-weight: 800;
       letter-spacing: 0.5px;
+      line-height: 1.15;
     }
 
     .logo span {
@@ -95,9 +161,16 @@
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 6px 22px;
       font-size: 0.95rem;
       flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 8px 2px;
     }
 
     .nav-links a:hover {
@@ -139,7 +212,12 @@
       padding: 14px 22px;
       border-radius: 999px;
       font-weight: 700;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      line-height: 1.2;
+      text-align: center;
       transition: 0.2s ease;
     }
 
@@ -180,7 +258,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
       gap: 22px;
     }
 
@@ -188,7 +266,7 @@
       background: white;
       padding: 28px;
       border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       border-top: 5px solid var(--gold);
     }
 
@@ -227,7 +305,7 @@
       background: white;
       padding: 32px;
       border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
 
     .checklist {
@@ -247,7 +325,7 @@
       margin-right: 10px;
     }
 
-    /* PROJECT GALLERY */
+    /* Project photos: add another <article class="project"> and drop images in .photo-stack. */
 
     .gallery {
       background: #f8f8f8;
@@ -264,7 +342,7 @@
       background: white;
       padding: 24px;
       border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.10);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
       border-top: 5px solid var(--gold);
     }
 
@@ -291,6 +369,7 @@
       background: var(--light);
       padding: 14px;
       border-radius: 14px;
+      min-width: 0;
     }
 
     .photo-label {
@@ -316,6 +395,90 @@
       background: #ddd;
     }
 
+
+    .gallery-note {
+      margin-top: 8px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .photo-open {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      background: transparent;
+      cursor: zoom-in;
+      appearance: none;
+    }
+
+    .gallery-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 36px;
+    }
+
+    .gallery-cta .btn {
+      max-width: 100%;
+      white-space: normal;
+      text-align: center;
+    }
+
+    .lightbox {
+      width: min(920px, calc(100vw - 24px));
+      max-height: calc(100dvh - 24px);
+      margin: auto;
+      padding: 12px 12px 16px;
+      border: none;
+      border-radius: 16px;
+      background: var(--dark);
+      color: white;
+    }
+
+    .lightbox::backdrop {
+      background: rgba(20, 20, 20, 0.86);
+    }
+
+    .lightbox form {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+    }
+
+    .lightbox-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 8px 16px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--tan);
+      color: #1f1f1f;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .lightbox img {
+      width: 100%;
+      max-height: min(72dvh, 820px);
+      object-fit: contain;
+      border-radius: 10px;
+      background: #111;
+    }
+
+    .lightbox p {
+      margin-top: 12px;
+      color: #f4f4f4;
+      font-size: 0.98rem;
+      line-height: 1.45;
+    }
+
     .contact {
       background: var(--dark);
       color: white;
@@ -335,10 +498,11 @@
     }
 
     .contact-card {
-      background: rgba(255,255,255,.08);
+      background: rgba(255, 255, 255, 0.08);
       padding: 30px;
       border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.15);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      min-width: 0;
     }
 
     .contact-card h3 {
@@ -351,9 +515,31 @@
       color: #efefef;
     }
 
+    .contact-card a {
+      color: var(--tan);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card a[href^="tel:"],
+    .contact-card a[href^="mailto:"] {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+
     .quote-form {
       display: grid;
       gap: 12px;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+      font-family: inherit;
     }
 
     input,
@@ -364,6 +550,10 @@
       border: none;
       border-radius: 10px;
       font-size: 1rem;
+      line-height: 1.4;
+      min-height: 48px;
+      color: var(--text);
+      background: #fff;
     }
 
     textarea {
@@ -377,6 +567,10 @@
       font-size: 1rem;
     }
 
+    .quote-form button {
+      width: 100%;
+    }
+
     footer {
       background: #141414;
       color: #ccc;
@@ -385,11 +579,27 @@
       font-size: 0.95rem;
     }
 
+    .call-bar {
+      display: none;
+    }
+
     @media (max-width: 780px) {
+      .topbar,
+      footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
       nav {
         align-items: flex-start;
         flex-direction: column;
-        margin-bottom: 50px;
+        gap: 8px;
+        margin-bottom: 22px;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 0 16px;
       }
 
       .about,
@@ -399,12 +609,37 @@
       }
 
       header {
-        padding-top: 48px;
+        padding: 28px 20px 32px;
       }
 
-      .gallery {
-        padding-left: 18px;
-        padding-right: 18px;
+      .hero h1 {
+        margin-bottom: 12px;
+      }
+
+      .hero p {
+        margin-bottom: 18px;
+      }
+
+      .buttons {
+        flex-wrap: nowrap;
+      }
+
+      .buttons .btn {
+        padding: 12px 14px;
+        font-size: 0.92rem;
+        white-space: nowrap;
+      }
+
+      .buttons .btn-primary {
+        flex: 1 1 auto;
+      }
+
+      .buttons .btn-secondary {
+        flex: 0 0 auto;
+      }
+
+      section {
+        padding: 48px 20px;
       }
 
       .project {
@@ -416,26 +651,126 @@
         max-height: none;
         object-fit: contain;
       }
+
+      .hero p {
+        font-size: 1.05rem;
+      }
+
+      .call-bar {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 40;
+        padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+        background: rgba(20, 20, 20, 0.96);
+        border-top: 3px solid var(--tan);
+      }
+
+      .call-bar a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        border-radius: 999px;
+        background: var(--tan);
+        color: #1f1f1f;
+        font-weight: 800;
+        font-size: 1.05rem;
+      }
+
+      body {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom));
+      }
+
+      body:has(.quote-form:focus-within) .call-bar {
+        display: none;
+      }
+
+      body:has(.quote-form:focus-within) {
+        padding-bottom: 0;
+      }
+
+      body:has(.lightbox[open]) .call-bar {
+        display: none;
+      }
+
+      body:has(.lightbox[open]) {
+        padding-bottom: 0;
+      }
+    }
+
+    @media (max-width: 780px) and (max-height: 780px) {
+      header {
+        padding: 18px 20px 22px;
+      }
+
+      nav {
+        margin-bottom: 12px;
+      }
+
+      .hero-label {
+        margin-bottom: 6px;
+        letter-spacing: 0.5px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        margin-bottom: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn {
+        transition: none;
+      }
+
+      .btn:hover {
+        transform: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <a class="skip-link" href="#services">Skip to content</a>
+
   <div class="topbar">
-    <div>
+    <p>
       <strong>Serving:</strong>
       Moore County &amp; surrounding NC areas
-    </div>
+    </p>
 
-    <div>
-      <strong>Call/Text:</strong>
-      <a href="tel:9109030387">910-903-0387</a>
-    </div>
+    <a class="topbar-call" href="tel:+19109030387">
+      <strong>Call/Text:</strong>&nbsp;910-903-0387
+    </a>
   </div>
 
   <header>
-    <nav>
+    <img
+      class="hero-media"
+      src="images/hero-800.webp"
+      srcset="images/hero-640.webp 640w, images/hero-800.webp 800w, images/hero-1280.webp 1280w"
+      sizes="100vw"
+      width="800"
+      height="1200"
+      alt=""
+      fetchpriority="high"
+      decoding="async"
+    />
+
+    <nav aria-label="Primary">
       <div class="logo">
         Coyote <span>Plumbing</span> LLC
       </div>
@@ -468,13 +803,14 @@
           Request a Free Quote
         </a>
 
-        <a class="btn btn-secondary" href="tel:9109030387">
+        <a class="btn btn-secondary" href="tel:+19109030387">
           Call Now
         </a>
       </div>
     </div>
   </header>
 
+  <main>
   <section id="services">
     <div class="section-title">
       <h2>Services We Offer</h2>
@@ -586,185 +922,425 @@
         Take a look at some of the bathroom transformations completed
         for homeowners in Moore County and surrounding areas.
       </p>
+      <p class="gallery-note">Tap a photo to enlarge it.</p>
     </div>
 
     <div class="gallery-grid">
 
-      <!-- BATHROOM 1 -->
-
-      <article class="project">
-        <h3>Complete Bathroom Transformation</h3>
+      <article class="project" id="project-pinebluff">
+        <h3>Pinebluff, NC</h3>
 
         <p class="project-description">
-          A complete bathroom renovation featuring a custom tiled shower,
-          updated vanity area, new finishes, and a refreshed layout.
+          Dramatic spa-like stone shower redo.
         </p>
 
         <div class="photo-pair">
-
           <div class="photo-column">
             <div class="photo-label">Before</div>
-
             <div class="photo-stack">
-              <img
-                src="tf1773614799246.jpg"
-                alt="Bathroom 1 before renovation"
-                loading="lazy"
-              />
-
-              <img
-                src="tf1773614793539.jpg"
-                alt="Bathroom 1 vanity area before renovation"
-                loading="lazy"
-              />
-
-              <img
-                src="tf1773614782536.jpg"
-                alt="Bathroom 1 shower before renovation"
-                loading="lazy"
-              />
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/pinebluff-before-1.jpg"
+                  width="960"
+                  height="1600"
+                  alt="White fiberglass shower stall before the spa remodel in Pinebluff, NC."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </div>
           </div>
 
           <div class="photo-column">
             <div class="photo-label">After</div>
-
             <div class="photo-stack">
-              <img src="file_00000000a00871f88a26ba45c52cb345.png"
-              />
-
-              <img
-                src="20260424_155557.jpg"
-                alt="Bathroom 1 custom tiled shower after renovation"
-                loading="lazy"
-              />
-
-              <img
-                src="20260424_155549.jpg"
-                alt="Bathroom 1 completed shower after renovation"
-                loading="lazy"
-              />
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/pinebluff-after-1.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Stacked-stone slate shower with rain head, glass door, and pebble floor in Pinebluff."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/pinebluff-after-2.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Head-on view of the dark stone spa shower, rain head, and pebble floor in Pinebluff."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </div>
           </div>
-
         </div>
       </article>
 
-      <!-- BATHROOM 2 -->
-
-      <article class="project">
-        <h3>Shower Remodel</h3>
+      <article class="project" id="project-raleigh">
+        <h3>Raleigh, NC</h3>
 
         <p class="project-description">
-          An outdated enclosure was transformed into a modern
-          walk-in shower with updated tile, and fixtures.
+          Full bathroom redo.
         </p>
 
         <div class="photo-pair">
-
           <div class="photo-column">
             <div class="photo-label">Before</div>
-
             <div class="photo-stack">
-              <img
-                src="20250914_150633.jpg"
-                alt="Bathroom 2 before shower conversion"
-                loading="lazy"
-              />
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/raleigh-before-1.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Builder-grade vanity and fiberglass tub/shower before the Raleigh, NC remodel."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/raleigh-before-2.jpg"
+                  width="480"
+                  height="640"
+                  alt="Fiberglass tub/shower stall before the full bathroom redo in Raleigh, NC."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </div>
           </div>
 
           <div class="photo-column">
             <div class="photo-label">After</div>
-
             <div class="photo-stack">
-              <img
-                src="tf1760208675772.jpg"
-                alt="Bathroom 2 after shower conversion"
-                loading="lazy"
-              />
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/raleigh-after-1.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Navy vanity, blue walls, and a walk-in tiled shower after the Raleigh remodel."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/raleigh-after-2.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Walk-in marble-look shower with mosaic niche, bench, and black fixtures in Raleigh."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/raleigh-after-3.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Navy vanity and walk-in shower from the opposite corner, Raleigh, NC."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </div>
           </div>
-
         </div>
       </article>
 
-      <!-- BATHROOM 3 -->
-
-      <article class="project">
-        <h3>Custom Master Bathroom Remodel</h3>
+      <article class="project" id="project-aberdeen">
+        <h3>Aberdeen, NC</h3>
 
         <p class="project-description">
-          A complete master bathroom transformation featuring a custom
-          walk-in shower, frameless glass, marble-look tile, updated vanity,
-          new flooring, and modern fixtures.
+          Complete bathroom redo with a wall removal.
         </p>
 
         <div class="photo-pair">
-
           <div class="photo-column">
             <div class="photo-label">Before</div>
-
             <div class="photo-stack">
-              <img
-                src="tf1767190108257.jpg"
-                alt="Bathroom 3 before complete renovation"
-                loading="lazy"
-              />
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/aberdeen-before-1.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Black vanity, shiplap, and floral wallpaper before the Aberdeen, NC remodel."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/aberdeen-before-2.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Separate water closet and wallpapered opening before a wall was removed in Aberdeen."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/aberdeen-before-3.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Old fiberglass shower stall before the Aberdeen bathroom remodel."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </div>
           </div>
 
           <div class="photo-column">
             <div class="photo-label">After</div>
-
             <div class="photo-stack">
-              <img
-                src="20260313_092006.jpg"
-                alt="Bathroom 3 after complete master bathroom renovation"
-                loading="lazy"
-              />
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/aberdeen-after-1.jpg"
+                  width="1025"
+                  height="1250"
+                  alt="White double vanity, backlit mirror, and open plan after the wall was removed in Aberdeen."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/aberdeen-after-2.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Walk-in tiled shower beside an exposed brick column, Aberdeen, NC."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/aberdeen-after-3.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Marble shower curb, glass door, and mosaic floor detail in Aberdeen, NC."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </div>
           </div>
-
         </div>
       </article>
 
-      <!-- BATHROOM 4 -->
-
-      <article class="project">
-        <h3>Luxury Stone Walk-In Shower</h3>
+      <article class="project" id="project-vass">
+        <h3>Vass, NC</h3>
 
         <p class="project-description">
-          A fiberglass shower enclosure was replaced with a custom tiled
-          walk-in shower featuring stacked-stone accents, pebble flooring,
-          black fixtures, rainfall showerhead, and glass doors.
+          Multiple bathroom remodels.
         </p>
 
         <div class="photo-pair">
-
           <div class="photo-column">
             <div class="photo-label">Before</div>
-
             <div class="photo-stack">
-              <img
-                src="20260521_085630.jpg"
-                alt="Bathroom 4 fiberglass shower before renovation"
-                loading="lazy"
-              />
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/vass-before-1.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Pink tile accessible bathroom before the remodel in Vass, NC."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/vass-before-2.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Moon-and-star wallpaper and a sliding fiberglass shower door, Vass, NC."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/vass-before-3.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Dated wallpaper, hex-tile floor, and a worn double vanity in the Vass hall bath."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/vass-before-4.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Striped wallpaper, duck border, and an old built-in tub/shower in Vass, NC."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </div>
           </div>
 
           <div class="photo-column">
             <div class="photo-label">After</div>
-
             <div class="photo-stack">
-              <img
-                src="20260708_144051.jpg"
-                alt="Bathroom 4 luxury stone walk-in shower after renovation"
-                loading="lazy"
-              />
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/vass-after-1.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Walk-in shower with marble-look tile, gold hardware, lit niche, and herringbone floor."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/vass-after-2.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Light-wood double vanity, gold fixtures, and marble-look tile in the Vass master bath."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/vass-after-3.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Herringbone mosaic shower floor with a brass drain in the Vass walk-in shower."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/vass-after-4.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Tiled tub/shower, grey vanity, and gold fixtures in a Vass hall bath."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/vass-after-5.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="White double vanity, gold fixtures, and marble-look floor in a Vass bathroom."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </div>
           </div>
+        </div>
+      </article>
+
+      <article class="project" id="project-carthage">
+        <h3>Carthage, NC</h3>
+
+        <p class="project-description">
+          Bathroom floors redone.
+        </p>
+
+        <div class="photo-pair">
+          <div class="photo-column">
+            <div class="photo-label">Before</div>
+            <div class="photo-stack">
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/carthage-before-1.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Worn grey square floor tile and a marked threshold in a Carthage, NC bathroom."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/carthage-before-2.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Old grey bathroom floor tile looking toward the doorway in Carthage, NC."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+            </div>
+          </div>
+
+          <div class="photo-column">
+            <div class="photo-label">After</div>
+            <div class="photo-stack">
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/carthage-after-1.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="New marble-look floor tile and threshold at the bathroom doorway in Carthage, NC."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="photo-open">
+                <span class="visually-hidden">Enlarge photo: </span>
+                <img
+                  src="images/projects/carthage-after-2.jpg"
+                  width="1200"
+                  height="1600"
+                  alt="Large-format marble-look bathroom floor tile after the redo in Carthage, NC."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="gallery-cta">
+      <a class="btn btn-primary" href="tel:+19109030387">Call or text 910-903-0387 for a free quote</a>
+    </div>
+  </section>
+
   <section class="contact" id="contact">
 
     <div class="section-title">
@@ -788,7 +1364,7 @@
 
         <p>
           <strong>Phone:</strong>
-          <a href="tel:9109030387">910-903-0387</a>
+          <a href="tel:+19109030387">910-903-0387</a>
         </p>
 
         <p>
@@ -814,27 +1390,37 @@
           enctype="text/plain"
         >
 
+          <label class="visually-hidden" for="quote-name">Your Name</label>
           <input
+            id="quote-name"
             type="text"
             name="name"
+            autocomplete="name"
             placeholder="Your Name"
             required
           />
 
+          <label class="visually-hidden" for="quote-phone">Phone Number</label>
           <input
+            id="quote-phone"
             type="tel"
             name="phone"
+            autocomplete="tel"
             placeholder="Phone Number"
             required
           />
 
+          <label class="visually-hidden" for="quote-email">Email Address</label>
           <input
+            id="quote-email"
             type="email"
             name="email"
+            autocomplete="email"
             placeholder="Email Address"
           />
 
-          <select name="service">
+          <label class="visually-hidden" for="quote-service">What do you need help with?</label>
+          <select id="quote-service" name="service">
             <option value="">What do you need help with?</option>
             <option>Plumbing Repair</option>
             <option>Bathroom Remodel</option>
@@ -844,7 +1430,9 @@
             <option>Other</option>
           </select>
 
+          <label class="visually-hidden" for="quote-message">Briefly describe the issue or project</label>
           <textarea
+            id="quote-message"
             name="message"
             placeholder="Briefly describe the issue or project"
           ></textarea>
@@ -858,11 +1446,52 @@
 
     </div>
   </section>
+  </main>
 
   <footer>
     © 2026 Coyote Plumbing LLC. Plumbing, repairs, and bathroom remodel
     services in Moore County, North Carolina.
   </footer>
+
+
+  <dialog id="lightbox" class="lightbox" aria-labelledby="lightbox-caption">
+    <form method="dialog">
+      <button class="lightbox-close" type="submit">Close</button>
+    </form>
+    <img id="lightbox-img" alt="" width="1200" height="1600" />
+    <p id="lightbox-caption"></p>
+  </dialog>
+
+  <script>
+    (function () {
+      var dialog = document.getElementById("lightbox");
+      var photo = document.getElementById("lightbox-img");
+      var caption = document.getElementById("lightbox-caption");
+      var gallery = document.getElementById("gallery");
+      if (!dialog || !photo || !gallery || typeof dialog.showModal !== "function") return;
+
+      gallery.addEventListener("click", function (event) {
+        var button = event.target.closest(".photo-open");
+        if (!button) return;
+        var source = button.querySelector("img");
+        if (!source) return;
+        photo.src = source.currentSrc || source.src;
+        photo.alt = source.alt;
+        photo.width = source.naturalWidth || source.width;
+        photo.height = source.naturalHeight || source.height;
+        caption.textContent = source.alt;
+        dialog.showModal();
+      });
+
+      dialog.addEventListener("click", function (event) {
+        if (event.target === dialog) dialog.close();
+      });
+    })();
+  </script>
+
+  <div class="call-bar">
+    <a href="tel:+19109030387">Call or text 910-903-0387</a>
+  </div>
 
 </body>
 </html>
